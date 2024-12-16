@@ -15,7 +15,8 @@ RUN mvn clean package -DskipTests
 FROM openjdk:17-jdk-slim
 WORKDIR /app  
     # Copy the built JAR file from target to the container
-COPY target/demo.requestcheck-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/demo.requestcheck-0.0.1-SNAPSHOT.jar app.jar
+
   
   # Expose port 8080
 EXPOSE 8080
