@@ -1,5 +1,5 @@
   # Install Maven
-RUN apt-get update && apt-get install -y maven
+FROM maven:3.9.3-eclipse-temurin-17-alpine AS build
   
   # Set the working directory inside the container
 WORKDIR /app
